@@ -1,0 +1,17 @@
+server.port: 8080
+
+spring:
+  profiles:
+    active: prod
+
+#Logging
+logging.level:
+  org.hibernate.SQL: DEBUG
+  org.hibernate.type: trace
+
+jwt:
+  secret: notice#!@#
+
+upload:
+  folder:
+    dir: /Users/ym/Desktop/file/
