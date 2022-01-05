@@ -41,8 +41,12 @@ public class NoticeRequest {
                 .views(0).build();
     }
 
-    public Notice toEntity(Notice notice) {
+    public Notice toEntity(Long id, Notice notice) {
         return notice.builder()
+                .id(id)
+                .createDate(notice.getCreateDate())
+                .user(notice.getUser())
+                .views(notice.getViews())
                 .subject(this.subject)
                 .content(this.content)
                 .startDate(this.startDate)

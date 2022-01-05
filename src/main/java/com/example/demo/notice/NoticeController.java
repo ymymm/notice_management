@@ -55,7 +55,7 @@ public class NoticeController {
     ){
         Notice notice = noticeService.get(id);
         fileService.delete(notice.getFile());
-        Notice noticeResult = noticeRequest.toEntity(notice);
+        Notice noticeResult = noticeRequest.toEntity(id, notice);
 
         noticeService.save(noticeResult);
         fileService.create(files, noticeResult);
